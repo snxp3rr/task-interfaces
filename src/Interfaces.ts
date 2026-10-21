@@ -4,14 +4,11 @@ export interface IPersonData {
     age: number;
 }
 
-/*
-Найдите и исправьте ошибку в данных, возвращаемых функцией getPerson.
- */
 export function getPerson(): IPersonData {
     return {
         name: 'Petr',
         secondName: 'Smith',
-        age: '7',
+        age: 7, // Исправлено: было '7' (строка), интерфейс требует number
     };
 }
 
@@ -22,10 +19,6 @@ export interface IStudentData {
     phone?: string;
 }
 
-/*
-Допишите функцию `getStudentsData` так, чтобы она возвращала массив из указанных в комментарии данных.
-Данные должны храниться в объектах, соответствующих интерфейсу `IStudentData`.
- */
 export function getStudentsData(): IStudentData[] {
     /**
      * Данные студентов которые нужно передать:
@@ -35,4 +28,23 @@ export function getStudentsData(): IStudentData[] {
      * 3. Petr Ivanov 19 лет
      *
      */
+    return [
+        {
+            name: 'Ivan',
+            secondName: 'Petrov',
+            age: 20,
+            phone: '+7(555)555-55-50',
+        },
+        {
+            name: 'Stepan',
+            secondName: 'Petrov',
+            age: 19,
+            phone: '+7(555)555-55-51',
+        },
+        {
+            name: 'Petr',
+            secondName: 'Ivanov',
+            age: 19,
+        },
+    ];
 }
